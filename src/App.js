@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import {Router} from '@reach/router';
+import {Router, navigate} from '@reach/router';
 import { Navbar, Nav, NavDropdown, Modal, Button } from 'react-bootstrap';
 import Main from './Components/Main'
 import Sandwich from './Components/Sandwich';
@@ -22,14 +22,14 @@ function App() {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="mr-auto">
-            <Nav.Link href={process.env.PUBLIC_URL + '/'}>Home</Nav.Link>
+            <Nav.Link onClick = { () => navigate(process.env.PUBLIC_URL + '/')}>Home</Nav.Link>
             <Nav.Link onClick={()=>setShow(true)} >Contact</Nav.Link>
             <NavDropdown title="Recipes" id="basic-nav-dropdown">
-              <NavDropdown.Item href={process.env.PUBLIC_URL + "/sandwich"}>Web Developer Sandwich</NavDropdown.Item>
-              <NavDropdown.Item href={process.env.PUBLIC_URL + "/pizza"}>Business Professional Pizza</NavDropdown.Item>
-              <NavDropdown.Item href={process.env.PUBLIC_URL + "/burger"}>Soft Skills Burger</NavDropdown.Item>
+              <NavDropdown.Item onClick = { () => navigate(process.env.PUBLIC_URL + '/sandwich')}>Web Developer Sandwich</NavDropdown.Item>
+              <NavDropdown.Item onClick = { () => navigate(process.env.PUBLIC_URL + '/pizza')}>Business Professional Pizza</NavDropdown.Item>
+              <NavDropdown.Item onClick = { () => navigate(process.env.PUBLIC_URL + '/burger')}>Soft Skills Burger</NavDropdown.Item>
               <NavDropdown.Divider />
-              <NavDropdown.Item href={process.env.PUBLIC_URL + "/"}>All Recipes</NavDropdown.Item>
+              <NavDropdown.Item onClick = { () => navigate(process.env.PUBLIC_URL + '/')}>All Recipes</NavDropdown.Item>
             </NavDropdown>
           </Nav>
           {/* <Form inline>
