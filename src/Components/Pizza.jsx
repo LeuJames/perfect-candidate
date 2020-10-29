@@ -185,7 +185,7 @@ const Pizza = () => {
         <Modal.Body>
           <div className='container'>
             <h5>Your creation has displeased Chef Ramsey, please try again...</h5>
-            <img className="img-fluid" src={require('../Images/pizza/wrong.jpg')} alt=""/>
+            <img className="img-fluid" src={wrong} alt=""/>
           </div>
         </Modal.Body>
         <Modal.Footer>
