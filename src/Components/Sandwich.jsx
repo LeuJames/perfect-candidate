@@ -1,6 +1,26 @@
 import React,  {useState} from 'react';
 import {Modal, Button} from 'react-bootstrap';
 
+import bottomBread from '../Images/sandwich/bottomBread.png';
+import cheese from '../Images/sandwich/cheese.png';
+import lettuce from '../Images/sandwich/lettuce.png';
+import meat from '../Images/sandwich/meat.png';
+import plate from '../Images/sandwich/plate.png';
+import tomato from '../Images/sandwich/tomato.png';
+import topBread from '../Images/sandwich/topBread.png';
+
+import wrong from '../Images/sandwich/wrong.jpg';
+
+import backEnd from '../Images/developer/backEnd.png';
+import database from '../Images/developer/database.jpg';
+import frontEnd from '../Images/developer/frontEnd.jpg';
+import webFund from '../Images/developer/webFund.png';
+import languages from '../Images/developer/languages.jpg';
+import versionControl from '../Images/developer/versionControl.jpg';
+
+import linkedIn from '../Images/linkedIn.png';
+import github from '../Images/github.png';
+
 const Sandwich = () => {
   const [sandwich, setSandwich] = useState([]);
   const [show, setShow] = useState('');
@@ -8,7 +28,7 @@ const Sandwich = () => {
   const handleClose = () => setShow('');
 
   const checkSandwich = () => {
-    const perfectSandwich = ['topBread', 'tomato', 'cheese', 'meat', 'lettuce', 'bottomBread'];
+    const perfectSandwich = [topBread, tomato, cheese, meat, lettuce, bottomBread];
     if(sandwich.length !==perfectSandwich.length) {
       setShow('fail');
       return;
@@ -45,18 +65,18 @@ const Sandwich = () => {
           {sandwich.map((ingredient, idx) => {
             return (
               <div key={idx}>
-                <img className="img-fluid"  style={{position: 'relative', maxHeight: '25rem', maxWidth:'25rem',zIndex: sandwich.length - idx, marginBottom: "-15rem", marginTop: "-15rem"}} src={require(`../Images/sandwich/${ingredient}.png`)} alt=""/>
+                <img className="img-fluid"  style={{position: 'relative', maxHeight: '25rem', maxWidth:'25rem',zIndex: sandwich.length - idx, marginBottom: "-15rem", marginTop: "-15rem"}} src={ingredient} alt=""/>
               </div>
             )
           })}
-          <img className="img-fluid mt-n4"src= {require("../Images/sandwich/plate.png")} alt=""/>
+          <img className="img-fluid mt-n4"src= {plate} alt=""/>
         </div>
       </div>
       <div className="jumbotron p-5">
         <h2 style={{position : 'relative', zIndex: "10"}}>Ingredients:</h2>
         <div className="row">
           <div className="card m-4" style={{width: "15rem"}}>
-            <img src={require("../Images/developer/webFund.png")} className="card-img-top" alt="..."/>
+            <img src={webFund} className="card-img-top" alt="..."/>
             <div className="card-body">
               <h5 className="card-title">1. Web Fundamentals</h5>
               <ul className='card-text'>
@@ -66,12 +86,12 @@ const Sandwich = () => {
                 <li>JQuery</li>
               </ul>
               <div className="card-footer text-center">
-                <button onClick = { () => setSandwich(['bottomBread', ...sandwich])} className="btn btn-primary">Add To Sandwich</button>
+                <button onClick = { () => setSandwich([bottomBread, ...sandwich])} className="btn btn-primary">Add To Sandwich</button>
               </div>
             </div>
           </div>
           <div className="card m-4" style={{width: "15rem"}}>
-            <img src={require("../Images/developer/languages.jpg")} className="card-img-top" alt="..."/>
+            <img src={languages} className="card-img-top" alt="..."/>
             <div className="card-body">
               <h5 className="card-title">2. Programming Languages</h5>
               <ul className='card-text'>
@@ -81,12 +101,12 @@ const Sandwich = () => {
                 <li>C#</li>
               </ul>
               <div className="card-footer text-center">
-                <button onClick = { () => setSandwich(['lettuce', ...sandwich])} className="btn btn-primary">Add To Sandwich</button>
+                <button onClick = { () => setSandwich([lettuce, ...sandwich])} className="btn btn-primary">Add To Sandwich</button>
               </div>
             </div>
           </div>
           <div className="card m-4" style={{width: "15rem"}}>
-            <img src={require("../Images/developer/backEnd.png")} className="card-img-top" alt="..."/>
+            <img src={backEnd} className="card-img-top" alt="..."/>
             <div className="card-body">
               <h5 className="card-title">3. Back-End Frameworks</h5>
               <ul className='card-text'>
@@ -96,12 +116,12 @@ const Sandwich = () => {
                 <li>Flask</li>
               </ul>
               <div className="card-footer text-center">
-                <button onClick = { () => setSandwich(['meat', ...sandwich])} className="btn btn-primary">Add To Sandwich</button>
+                <button onClick = { () => setSandwich([meat, ...sandwich])} className="btn btn-primary">Add To Sandwich</button>
               </div>
             </div>
           </div>
           <div className="card m-4" style={{width: "15rem"}}>
-            <img src={require("../Images/developer/database.jpg")} className="card-img-top" alt="..."/>
+            <img src={database} className="card-img-top" alt="..."/>
             <div className="card-body">
               <h5 className="card-title">4. Database</h5>
               <ul className='card-text'>
@@ -110,12 +130,12 @@ const Sandwich = () => {
                 <li>SQLite</li>
               </ul>
               <div className="card-footer text-center">
-                <button onClick = { () => setSandwich(['cheese', ...sandwich])} className="btn btn-primary">Add To Sandwich</button>
+                <button onClick = { () => setSandwich([cheese, ...sandwich])} className="btn btn-primary">Add To Sandwich</button>
               </div>
             </div>
           </div>
           <div className="card m-4" style={{width: "15rem"}}>
-            <img src={require("../Images/developer/frontEnd.jpg")} className="card-img-top" alt="..."/>
+            <img src={frontEnd} className="card-img-top" alt="..."/>
             <div className="card-body">
               <h5 className="card-title">5. Front-End Frameworks</h5>
               <ul className='card-text'>
@@ -123,12 +143,12 @@ const Sandwich = () => {
                 <li>Bootstrap</li>
               </ul>
               <div className="card-footer text-center">
-                <button onClick = { () => setSandwich(['tomato', ...sandwich])} className="btn btn-primary">Add To Sandwich</button>
+                <button onClick = { () => setSandwich([tomato, ...sandwich])} className="btn btn-primary">Add To Sandwich</button>
               </div>
             </div>
           </div>
           <div className="card m-4" style={{width: "15rem"}}>
-            <img src={require("../Images/developer/versionControl.jpg")} className="card-img-top" alt="..."/>
+            <img src={versionControl} className="card-img-top" alt="..."/>
             <div className="card-body">
               <h5 className="card-title">6. Version Control & Deployment</h5>
               <ul className='card-text'>
@@ -137,7 +157,7 @@ const Sandwich = () => {
                 <li>Amazon Web Services (AWS)</li>
               </ul>
               <div className="card-footer text-center">
-                <button onClick = { () => setSandwich(['topBread', ...sandwich])} className="btn btn-primary">Add To Sandwich</button>
+                <button onClick = { () => setSandwich([topBread, ...sandwich])} className="btn btn-primary">Add To Sandwich</button>
               </div>
             </div>
           </div>
@@ -149,7 +169,7 @@ const Sandwich = () => {
           <Modal.Title>Congrats!!</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <h5>You just created a perfect Full Stack Developer Sandwich! And like this sandwich, Chef/Job Candidate James Leu has all of these ingredients to fill your full stack developer candidate needs!</h5>
+          <h5>You just created a perfect Full Stack Developer Sandwich! And like this sandwich, Chef/Job Candidate James "Jase" Leu has all of these ingredients to fill your full stack developer candidate needs!</h5>
           <form>
             <h6>Interested in hiring me? Use the form below to get in touch!</h6>
             <div className="form-group">
@@ -166,10 +186,10 @@ const Sandwich = () => {
         </Modal.Body>
         <Modal.Footer>
           <a href="https://github.com/LeuJames" target="_blank" rel="noreferrer">
-            <img src={require('../Images/github.png')} style={{ maxWidth: '4rem', maxHeight:'4rem'}} alt="github"/>
+            <img src={github} style={{ maxWidth: '4rem', maxHeight:'4rem'}} alt="github"/>
           </a>
-          <a href="https://www.linkedin.com/in/james-leu-4a59bb85/" target="_blank" rel="noreferrer">
-            <img src={require('../Images/linkedIn.png')} style={{ maxWidth: '4rem', maxHeight:'4rem'}} alt="Linked In"/>
+          <a href="https://www.linkedin.com/in/james-jase-leu-4a59bb85/" target="_blank" rel="noreferrer">
+            <img src={linkedIn} style={{ maxWidth: '4rem', maxHeight:'4rem'}} alt="Linked In"/>
           </a>
           <Button variant="secondary" onClick={handleClose}>Close</Button>
         </Modal.Footer>
@@ -182,7 +202,7 @@ const Sandwich = () => {
         <Modal.Body>
           <div className='container'>
             <h5>Your creation has displeased Chef Ramsey, please try again...</h5>
-            <img className="img-fluid" src={require('../Images/sandwich/wrong.jpg')} alt=""/>
+            <img className="img-fluid" src={wrong} alt=""/>
           </div>
         </Modal.Body>
         <Modal.Footer>

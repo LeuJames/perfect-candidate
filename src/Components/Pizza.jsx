@@ -1,6 +1,24 @@
 import React,  {useState} from 'react';
 import {Modal, Button} from 'react-bootstrap';
 
+import crust from '../Images/pizza/crust.png';
+import cheese from '../Images/pizza/cheese.png';
+import meat from '../Images/pizza/meat.png';
+import plate from '../Images/pizza/plate.png';
+import veggies from '../Images/pizza/veggies.png';
+import marinara from '../Images/pizza/marinara.png';
+
+import wrong from '../Images/pizza/wrong.jpg';
+
+import audit from '../Images/business/audit.png';
+import bsba from '../Images/business/bsba.jpg';
+import mba from '../Images/business/mba.jpg';
+import operations from '../Images/business/operations.jpg';
+import project from '../Images/business/project.jpg';
+
+import linkedIn from '../Images/linkedIn.png';
+import github from '../Images/github.png';
+
 const Pizza = () => {
   const [pizza, setPizza] = useState([]);
   const [show, setShow] = useState('');
@@ -10,7 +28,7 @@ const Pizza = () => {
   const handleCloseDetails = () => setDetails('');
 
   const checkPizza = () => {
-    const perfectPizza = ['veggies', 'meat', 'cheese', 'marinara', 'crust'];
+    const perfectPizza = [veggies, meat, cheese, marinara, crust];
     if(pizza.length !== perfectPizza.length) {
       setShow('fail');
       return;
@@ -46,18 +64,18 @@ const Pizza = () => {
           {pizza.map((ingredient, idx) => {
             return (
               <div key={idx}>
-                <img className="img-fluid"  style={{zIndex: pizza.length - idx, maxHeight: '24rem', position: "fixed", right: '18rem', bottom: '5rem'}} src={require(`../Images/pizza/${ingredient}.png`)} alt=""/>
+                <img className="img-fluid"  style={{zIndex: pizza.length - idx, maxHeight: '24rem', position: "fixed", right: '18rem', bottom: '5rem'}} src={ingredient} alt=""/>
               </div>
             )
           })}
-          <img className="img-fluid" style={{position: 'fixed', right: '15rem', bottom: '2rem', maxHeight: '30rem', marginTop : "-5rem"}} src= {require("../Images/pizza/plate.png")} alt=""/>
+          <img className="img-fluid" style={{position: 'fixed', right: '15rem', bottom: '2rem', maxHeight: '30rem', marginTop : "-5rem"}} src= {plate} alt=""/>
         </div>
       </div>
       <div className="jumbotron p-5">
         <h2 style={{position : 'relative', zIndex: "10"}}>Ingredients:</h2>
         <div className="row">
           <div className="card m-4" style={{width: "15rem"}}>
-            <img src={require("../Images/business/bsba.jpg")} className="card-img-top" alt="..."/>
+            <img src={bsba} className="card-img-top" alt="..."/>
             <div className="card-body">
               <h5 className="card-title">1. B.S.B.A - Finance & Accounting </h5>
               <div className='card-text'>
@@ -66,12 +84,12 @@ const Pizza = () => {
               </div>
               <div className="card-footer text-center">
                 <button onClick = { () => setDetails('bsba')} className="btn btn-secondary m-1">Details</button>
-                <button onClick = { () => setPizza(['crust', ...pizza])} className="btn btn-primary m-1">Add To Pizza</button>
+                <button onClick = { () => setPizza([crust, ...pizza])} className="btn btn-primary m-1">Add To Pizza</button>
               </div>
             </div>
           </div>
           <div className="card m-4" style={{width: "15rem"}}>
-            <img src={require("../Images/business/mba.jpg")} className="card-img-top" alt="..."/>
+            <img src={mba} className="card-img-top" alt="..."/>
             <div className="card-body">
               <h5 className="card-title">2. MBA - Finance</h5>
               <div className='card-text'>
@@ -80,12 +98,12 @@ const Pizza = () => {
               </div>
               <div className="card-footer text-center">
                 <button onClick = { () => setDetails('mba')} className="btn btn-secondary m-1">Details</button>
-                <button onClick = { () => setPizza(['marinara', ...pizza])} className="btn btn-primary m-1">Add To Pizza</button>
+                <button onClick = { () => setPizza([marinara, ...pizza])} className="btn btn-primary m-1">Add To Pizza</button>
               </div>
             </div>
           </div>
           <div className="card m-4" style={{width: "15rem"}}>
-            <img src={require("../Images/business/audit.png")} className="card-img-top" alt="..."/>
+            <img src={audit} className="card-img-top" alt="..."/>
             <div className="card-body">
               <h5 className="card-title">3. Internal Audit Work Experience</h5>
               <div className='card-text'>
@@ -94,12 +112,12 @@ const Pizza = () => {
               </div>
               <div className="card-footer text-center">
                 <button onClick = { () => setDetails('audit')} className="btn btn-secondary m-1">Details</button>
-                <button onClick = { () => setPizza(['cheese', ...pizza])} className="btn btn-primary m-1">Add To Pizza</button>
+                <button onClick = { () => setPizza([cheese, ...pizza])} className="btn btn-primary m-1">Add To Pizza</button>
               </div>
             </div>
           </div>
           <div className="card m-4" style={{width: "15rem"}}>
-            <img src={require("../Images/business/operations.jpg")} className="card-img-top" alt="..."/>
+            <img src={operations} className="card-img-top" alt="..."/>
             <div className="card-body">
               <h5 className="card-title">4. Operations Management Experience</h5>
               <div className='card-text'>
@@ -108,12 +126,12 @@ const Pizza = () => {
               </div>
               <div className="card-footer text-center">
                 <button onClick = { () => setDetails('operations')} className="btn btn-secondary m-1">Details</button>
-                <button onClick = { () => setPizza(['meat', ...pizza])} className="btn btn-primary m-1">Add To Pizza</button>
+                <button onClick = { () => setPizza([meat, ...pizza])} className="btn btn-primary m-1">Add To Pizza</button>
               </div>
             </div>
           </div>
           <div className="card m-4" style={{width: "15rem"}}>
-            <img src={require("../Images/business/project.jpg")} className="card-img-top" alt="..."/>
+            <img src={project} className="card-img-top" alt="..."/>
             <div className="card-body">
               <h5 className="card-title">5. Project Management Experience</h5>
               <div className='card-text'>
@@ -122,7 +140,7 @@ const Pizza = () => {
               </div>
               <div className="card-footer text-center">
                 <button onClick = { () => setDetails('project')} className="btn btn-secondary m-1">Details</button>
-                <button onClick = { () => setPizza(['veggies', ...pizza])} className="btn btn-primary m-1">Add To Pizza</button>
+                <button onClick = { () => setPizza([veggies, ...pizza])} className="btn btn-primary m-1">Add To Pizza</button>
               </div>
             </div>
           </div>
@@ -151,10 +169,10 @@ const Pizza = () => {
         </Modal.Body>
         <Modal.Footer>
           <a href="https://github.com/LeuJames" target="_blank" rel="noreferrer">
-            <img src={require('../Images/github.png')} style={{ maxWidth: '4rem', maxHeight:'4rem'}} alt="github"/>
+            <img src={github} style={{ maxWidth: '4rem', maxHeight:'4rem'}} alt="github"/>
           </a>
-          <a href="https://www.linkedin.com/in/james-leu-4a59bb85/" target="_blank" rel="noreferrer">
-            <img src={require('../Images/linkedIn.png')} style={{ maxWidth: '4rem', maxHeight:'4rem'}} alt="Linked In"/>
+          <a href="https://www.linkedin.com/in/james-jase-leu-4a59bb85/" target="_blank" rel="noreferrer">
+            <img src={linkedIn} style={{ maxWidth: '4rem', maxHeight:'4rem'}} alt="Linked In"/>
           </a>
           <Button variant="secondary" onClick={handleClose}>Close</Button>
         </Modal.Footer>

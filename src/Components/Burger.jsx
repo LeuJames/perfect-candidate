@@ -1,6 +1,32 @@
 import React,  {useState} from 'react';
 import {Modal, Button} from 'react-bootstrap';
 
+import bottomBun from '../Images/burger/bottomBun.png';
+import cheese from '../Images/burger/cheese.png';
+import lettuce from '../Images/burger/lettuce.png';
+import meat from '../Images/burger/meat.png';
+import plate from '../Images/burger/plate.png';
+import tomato from '../Images/burger/tomato.png';
+import topBun from '../Images/burger/topBun.png';
+import onion from '../Images/burger/onion.png';
+import pickles from '../Images/burger/pickles.png';
+import bacon from '../Images/burger/bacon.png';
+
+import wrong from '../Images/burger/wrong.jpg';
+
+import communicator from '../Images/softSkills/communicator.png';
+import dilligence from '../Images/softSkills/dilligence.jpg';
+import emotionalIntelligence from '../Images/softSkills/emotionalIntelligence.jpg';
+import entrepeneur from '../Images/softSkills/entrepreneur.png';
+import integrity from '../Images/softSkills/integrity.jpg';
+import leadership from '../Images/softSkills/leadership.jpg';
+import learner from '../Images/softSkills/learner.jpg';
+import multiDiscipline from '../Images/softSkills/multiDiscipline.jpg';
+import teamPlayer from '../Images/softSkills/teamPlayer.jpg';
+
+import linkedIn from '../Images/linkedIn.png';
+import github from '../Images/github.png';
+
 const Burger = () => {
   const [burger, setBurger] = useState([]);
   const [show, setShow] = useState('');
@@ -10,7 +36,7 @@ const Burger = () => {
   const handleCloseDetails = () => setDetails(0);
 
   const checkBurger = () => {
-    const perfectBurger = ['topBun', 'tomato', 'pickles', 'onion','cheese', 'meat', 'bacon', 'lettuce', 'bottomBun'];
+    const perfectBurger = [topBun, tomato, pickles, onion, cheese, meat, bacon, lettuce, bottomBun];
     if(burger.length !== perfectBurger.length) {
       setShow('fail');
       return;
@@ -50,11 +76,11 @@ const Burger = () => {
           {burger.map((ingredient, idx) => {
             return (
               <div key={idx}>
-                <img className="img-fluid"  style={{maxWidth:'25rem', position: 'relative', zIndex: burger.length - idx, marginBottom: "-10rem", marginTop: "-5rem"}} src={require(`../Images/burger/${ingredient}.png`)} alt=""/>
+                <img className="img-fluid"  style={{maxWidth:'25rem', position: 'relative', zIndex: burger.length - idx, marginBottom: "-10rem", marginTop: "-5rem"}} src={ingredient} alt=""/>
               </div>
             )
           })}
-          <img className="img-fluid mt-n5"src= {require("../Images/burger/plate.png")} alt=""/>
+          <img className="img-fluid mt-n5"src= {plate} alt=""/>
         </div>
       </div>
       <div className="jumbotron p-5">
@@ -62,7 +88,7 @@ const Burger = () => {
         <div className="row">
 
           <div className="card m-4" style={{width: "15rem"}}>
-            <img src={require("../Images/softSkills/entrepeneur.png")} className="card-img-top" alt="..."/>
+            <img src={entrepeneur} className="card-img-top" alt="..."/>
             <div className="card-body">
               <h5 className="card-title">1. Entrepeneurial Spirit</h5>
               <div className='card-text'>
@@ -70,13 +96,13 @@ const Burger = () => {
               </div>
               <div className="card-footer text-center">
                 <button onClick = { () => setDetails(1)} className="btn btn-secondary m-1">Details</button>
-                <button onClick = { () => setBurger(['bottomBun', ...burger])} className="btn btn-primary">Add To Burger</button>
+                <button onClick = { () => setBurger([bottomBun, ...burger])} className="btn btn-primary">Add To Burger</button>
               </div>
             </div>
           </div>
 
           <div className="card m-4" style={{width: "15rem"}}>
-            <img src={require("../Images/softSkills/leadership.jpg")} className="card-img-top" alt="..."/>
+            <img src={leadership} className="card-img-top" alt="..."/>
             <div className="card-body">
               <h5 className="card-title">2. Leadership</h5>
               <div className='card-text'>
@@ -84,13 +110,13 @@ const Burger = () => {
               </div>
               <div className="card-footer text-center">
                 <button onClick = { () => setDetails(1)} className="btn btn-secondary m-1">Details</button>
-                <button onClick = { () => setBurger(['lettuce', ...burger])} className="btn btn-primary">Add To Burger</button>
+                <button onClick = { () => setBurger([lettuce, ...burger])} className="btn btn-primary">Add To Burger</button>
               </div>
             </div>
           </div>
 
           <div className="card m-4" style={{width: "15rem"}}>
-            <img src={require("../Images/softSkills/multiDiscipline.jpg")} className="card-img-top" alt="..."/>
+            <img src={multiDiscipline} className="card-img-top" alt="..."/>
             <div className="card-body">
               <h5 className="card-title">3. Multi-Disciplinarian</h5>
               <div className='card-text'>
@@ -98,13 +124,13 @@ const Burger = () => {
               </div>
               <div className="card-footer text-center">
                 <button onClick = { () => setDetails(1)} className="btn btn-secondary m-1">Details</button>
-                <button onClick = { () => setBurger(['bacon', ...burger])} className="btn btn-primary">Add To Burger</button>
+                <button onClick = { () => setBurger([bacon, ...burger])} className="btn btn-primary">Add To Burger</button>
               </div>
             </div>
           </div>
 
           <div className="card m-4" style={{width: "15rem"}}>
-            <img src={require("../Images/softSkills/learner.jpg")} className="card-img-top" alt="..."/>
+            <img src={learner} className="card-img-top" alt="..."/>
             <div className="card-body">
               <h5 className="card-title">4. Life-Long Learner</h5>
               <div className='card-text'>
@@ -112,13 +138,13 @@ const Burger = () => {
               </div>
               <div className="card-footer text-center">
                 <button onClick = { () => setDetails(1)} className="btn btn-secondary m-1">Details</button>
-                <button onClick = { () => setBurger(['meat', ...burger])} className="btn btn-primary">Add To Burger</button>
+                <button onClick = { () => setBurger([meat, ...burger])} className="btn btn-primary">Add To Burger</button>
               </div>
             </div>
           </div>
 
           <div className="card m-4" style={{width: "15rem"}}>
-            <img src={require("../Images/softSkills/dilligence.jpg")} className="card-img-top" alt="..."/>
+            <img src={dilligence} className="card-img-top" alt="..."/>
             <div className="card-body">
               <h5 className="card-title">5. Diligent Worker</h5>
               <div className='card-text'>
@@ -126,13 +152,13 @@ const Burger = () => {
               </div>
               <div className="card-footer text-center">
                 <button onClick = { () => setDetails(1)} className="btn btn-secondary m-1">Details</button>
-                <button onClick = { () => setBurger(['cheese', ...burger])} className="btn btn-primary">Add To Burger</button>
+                <button onClick = { () => setBurger([cheese, ...burger])} className="btn btn-primary">Add To Burger</button>
               </div>
             </div>
           </div>
 
           <div className="card m-4" style={{width: "15rem"}}>
-            <img src={require("../Images/softSkills/emotionalIntelligence.jpg")} className="card-img-top" alt="..."/>
+            <img src={emotionalIntelligence} className="card-img-top" alt="..."/>
             <div className="card-body">
               <h5 className="card-title">6. Emotional Intelligence</h5>
               <div className='card-text'>
@@ -140,13 +166,13 @@ const Burger = () => {
               </div>
               <div className="card-footer text-center">
                 <button onClick = { () => setDetails(1)} className="btn btn-secondary m-1">Details</button>
-                <button onClick = { () => setBurger(['onion', ...burger])} className="btn btn-primary">Add To Burger</button>
+                <button onClick = { () => setBurger([onion, ...burger])} className="btn btn-primary">Add To Burger</button>
               </div>
             </div>
           </div>
 
           <div className="card m-4" style={{width: "15rem"}}>
-            <img src={require("../Images/softSkills/communicator.png")} className="card-img-top" alt="..."/>
+            <img src={communicator} className="card-img-top" alt="..."/>
             <div className="card-body">
               <h5 className="card-title">7. Effective Communicator</h5>
               <div className='card-text'>
@@ -154,13 +180,13 @@ const Burger = () => {
               </div>
               <div className="card-footer text-center">
                 <button onClick = { () => setDetails(1)} className="btn btn-secondary m-1">Details</button>
-                <button onClick = { () => setBurger(['pickles', ...burger])} className="btn btn-primary">Add To Burger</button>
+                <button onClick = { () => setBurger([pickles, ...burger])} className="btn btn-primary">Add To Burger</button>
               </div>
             </div>
           </div>
 
           <div className="card m-4" style={{width: "15rem"}}>
-            <img src={require("../Images/softSkills/teamPlayer.jpg")} className="card-img-top" alt="..."/>
+            <img src={teamPlayer} className="card-img-top" alt="..."/>
             <div className="card-body">
               <h5 className="card-title">8. Team Player</h5>
               <div className='card-text'>
@@ -168,13 +194,13 @@ const Burger = () => {
               </div>
               <div className="card-footer text-center">
                 <button onClick = { () => setDetails(1)} className="btn btn-secondary m-1">Details</button>
-                <button onClick = { () => setBurger(['tomato', ...burger])} className="btn btn-primary">Add To Burger</button>
+                <button onClick = { () => setBurger([tomato, ...burger])} className="btn btn-primary">Add To Burger</button>
               </div>
             </div>
           </div>
 
           <div className="card m-4" style={{width: "15rem"}}>
-            <img src={require("../Images/softSkills/integrity.jpg")} className="card-img-top" alt="..."/>
+            <img src={integrity} className="card-img-top" alt="..."/>
             <div className="card-body">
               <h5 className="card-title">9. Unwavering Integrity</h5>
               <div className='card-text'>
@@ -182,7 +208,7 @@ const Burger = () => {
               </div>
               <div className="card-footer text-center">
                 <button onClick = { () => setDetails(1)} className="btn btn-secondary m-1">Details</button>
-                <button onClick = { () => setBurger(['topBun', ...burger])} className="btn btn-primary">Add To Burger</button>
+                <button onClick = { () => setBurger([topBun, ...burger])} className="btn btn-primary">Add To Burger</button>
               </div>
             </div>
           </div>
@@ -211,10 +237,10 @@ const Burger = () => {
         </Modal.Body>
         <Modal.Footer>
           <a href="https://github.com/LeuJames" target="_blank" rel="noreferrer">
-            <img src={require('../Images/github.png')} style={{ maxWidth: '4rem', maxHeight:'4rem'}} alt="github"/>
+            <img src={github} style={{ maxWidth: '4rem', maxHeight:'4rem'}} alt="github"/>
           </a>
-          <a href="https://www.linkedin.com/in/james-leu-4a59bb85/" target="_blank" rel="noreferrer">
-            <img src={require('../Images/linkedIn.png')} style={{ maxWidth: '4rem', maxHeight:'4rem'}} alt="Linked In"/>
+          <a href="https://www.linkedin.com/in/james-jase-leu-4a59bb85/" target="_blank" rel="noreferrer">
+            <img src={linkedIn} style={{ maxWidth: '4rem', maxHeight:'4rem'}} alt="LinkedIn"/>
           </a>
           <Button variant="secondary" onClick={handleClose}>Close</Button>
         </Modal.Footer>
@@ -227,7 +253,7 @@ const Burger = () => {
         <Modal.Body>
           <div className='container'>
             <h5>Your creation has displeased Chef Ramsey, please try again...</h5>
-            <img className="img-fluid" src={require('../Images/burger/wrong.jpg')} alt=""/>
+            <img className="img-fluid" src={wrong} alt=""/>
           </div>
         </Modal.Body>
         <Modal.Footer>
