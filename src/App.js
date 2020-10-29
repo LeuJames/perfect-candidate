@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState} from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {Router} from '@reach/router';
 import { Navbar, Nav, NavDropdown, Modal, Button } from 'react-bootstrap';
@@ -22,14 +22,14 @@ function App() {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="mr-auto">
-            <Nav.Link href={process.env.PUBLIC_URL + '/'}>Home</Nav.Link>
+            <Nav.Link href='/'>Home</Nav.Link>
             <Nav.Link onClick={()=>setShow(true)} >Contact</Nav.Link>
             <NavDropdown title="Recipes" id="basic-nav-dropdown">
-              <NavDropdown.Item href={process.env.PUBLIC_URL + "/sandwich"}>Web Developer Sandwich</NavDropdown.Item>
-              <NavDropdown.Item href={process.env.PUBLIC_URL + "/pizza"}>Business Professional Pizza</NavDropdown.Item>
-              <NavDropdown.Item href={process.env.PUBLIC_URL + "/burger"}>Soft Skills Burger</NavDropdown.Item>
+              <NavDropdown.Item href="/sandwich">Web Developer Sandwich</NavDropdown.Item>
+              <NavDropdown.Item href="/pizza">Business Professional Pizza</NavDropdown.Item>
+              <NavDropdown.Item href="/burger">Soft Skills Burger</NavDropdown.Item>
               <NavDropdown.Divider />
-              <NavDropdown.Item href={process.env.PUBLIC_URL + "/"}>All Recipes</NavDropdown.Item>
+              <NavDropdown.Item href="/">All Recipes</NavDropdown.Item>
             </NavDropdown>
           </Nav>
           {/* <Form inline>
@@ -52,10 +52,10 @@ function App() {
         <h4>Are you a hiring manager or recruiter looking for the perfect candidate? We have just the recipes for you!</h4>
       </div>
       <Router>
-        <Main path={process.env.PUBLIC_URL + '/'}/>
-        <Sandwich path={process.env.PUBLIC_URL + '/sandwich'}/>
-        <Pizza path={process.env.PUBLIC_URL + '/pizza'}/>
-        <Burger path={process.env.PUBLIC_URL + '/burger'}/>
+        <Main path='/'/>
+        <Sandwich path='/sandwich'/>
+        <Pizza path='/pizza'/>
+        <Burger path='/burger'/>
       </Router>
 
       <Modal show={show} onHide={handleClose}>
@@ -78,10 +78,10 @@ function App() {
         </form>
       </Modal.Body>
       <Modal.Footer>
-        <a href="https://github.com/LeuJames" target="_blank">
+        <a href="https://github.com/LeuJames" target="_blank" rel="noreferrer">
           <img src={github} style={{ maxWidth: '3rem', maxHeight:'3rem'}} alt="github"/>
         </a>
-        <a href="https://www.linkedin.com/in/james-leu-4a59bb85/" target="_blank">
+        <a href="https://www.linkedin.com/in/james-leu-4a59bb85/" target="_blank" rel="noreferrer">
           <img src={linkedin} style={{ maxWidth: '3rem', maxHeight:'3rem'}} alt="Linked In"/>
         </a>
         <Button variant="secondary" onClick={handleClose}>Close</Button>

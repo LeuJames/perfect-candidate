@@ -150,10 +150,10 @@ const Pizza = () => {
           </form>
         </Modal.Body>
         <Modal.Footer>
-          <a href="https://github.com/LeuJames" target="_blank">
+          <a href="https://github.com/LeuJames" target="_blank" rel="noreferrer">
             <img src={require('../Images/github.png')} style={{ maxWidth: '4rem', maxHeight:'4rem'}} alt="github"/>
           </a>
-          <a href="https://www.linkedin.com/in/james-leu-4a59bb85/" target="_blank">
+          <a href="https://www.linkedin.com/in/james-leu-4a59bb85/" target="_blank" rel="noreferrer">
             <img src={require('../Images/linkedIn.png')} style={{ maxWidth: '4rem', maxHeight:'4rem'}} alt="Linked In"/>
           </a>
           <Button variant="secondary" onClick={handleClose}>Close</Button>
